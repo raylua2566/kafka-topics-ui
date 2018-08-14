@@ -16,7 +16,7 @@ dataTreeViewModule.directive('treeView', function() {
 });
 
 
-dataTreeViewModule.controller('dataTreeViewCtrl', function ($scope, $log, $base64) {
+dataTreeViewModule.controller('dataTreeViewCtrl', function ($scope, $log, $base64 , base64) {
 
    $scope.$watch("data", function() {
         if($scope.data) {
@@ -35,7 +35,7 @@ dataTreeViewModule.controller('dataTreeViewCtrl', function ($scope, $log, $base6
            }
       })
    $scope.decode = function(string){
-   return $base64.decode(string)
+   return base64.decode(string)
    }
 
    $scope.isAvroOrJsonValue = function (keyOrValue) {

@@ -1,4 +1,4 @@
-angularAPP.controller('ViewTopicCtrl', function ($scope, $routeParams, $rootScope, $filter, $log, $location,$cookies, $http, $base64, TopicFactory, env, $q, $timeout , consumerFactory, HttpFactory) {
+angularAPP.controller('ViewTopicCtrl', function ($scope, $routeParams, $rootScope, $filter, $log, $location,$cookies, $http, $base64, base64, TopicFactory, env, $q, $timeout , consumerFactory, HttpFactory) {
 
   $log.debug($routeParams.topicName, "Starting [ViewTopicCtrl]");
 
@@ -159,8 +159,8 @@ angularAPP.controller('ViewTopicCtrl', function ($scope, $routeParams, $rootScop
 
      if(format == 'binary'){
        angular.forEach($scope.rows, function(row){
-          row.key=$base64.decode(row.key)
-          row.value=$base64.decode(row.value)
+          row.key=base64.decode(row.key?row.key:"")
+          row.value=base64.decode(row.value?row.value:"")
        })
       $scope.dataForDownload = $scope.rows
      }

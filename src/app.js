@@ -19,7 +19,8 @@ var angularAPP = angular.module('angularAPP', [
   'treeView',
   'ngHandsontable',
   'rawView',
-  'base64'
+  'base64',
+  'ab-base64'
 ]);
 
 //angularAPP.controller('HeaderCtrl', function (env, $rootScope, $scope, $log, $location, $route) { });
