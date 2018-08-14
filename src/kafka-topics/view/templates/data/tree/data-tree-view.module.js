@@ -35,7 +35,7 @@ dataTreeViewModule.controller('dataTreeViewCtrl', function ($scope, $log, $base6
            }
       })
    $scope.decode = function(string){
-   return base64.decode(string)
+   return base64.decode(string?string:"")
    }
 
    $scope.isAvroOrJsonValue = function (keyOrValue) {
